@@ -1,7 +1,9 @@
 import { Component } from 'react';
 import HandymanForm from './HandymanForm';
 import {Button, Card, CardContent, Image, Header, Modal, Icon } from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
 import Elliot from '../images/elliot.jpg';
+
 class Handyman extends Component{
   state = { editing: false }
   
@@ -30,7 +32,11 @@ class Handyman extends Component{
             </CardContent>
             <CardContent extra>
               <div className="ui three buttons">
-                <Button basic color="green"> View Services </Button>
+                <Button basic color="green">
+                  <Link to={`/handymen/${id}/services`}> 
+                  View Services
+                   </Link>
+                   </Button>
                 <Button basic color="green" onClick={()=> this.toggleForm()}> Edit </Button>
                 <Modal
                   basic
